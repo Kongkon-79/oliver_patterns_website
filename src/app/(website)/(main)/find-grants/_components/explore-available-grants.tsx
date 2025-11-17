@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import { useDebounce } from "@/components/hooks/useDebounce";
 export interface GrantResponse {
   status: boolean;
   message: string;
@@ -34,20 +35,33 @@ export interface GrantItem {
 }
 
 const ExploreAvailableGrants = () => {
-  const { data, isLoading, isError, error } = useQuery<GrantResponse>({
-    queryKey: ["grants"],
+  const [search, setSearch] = React.useState<string>("");
+  const debouncedSearch = useDebounce(search, 500);
+  console.log(search)
+  const { data, isError, error } = useQuery<GrantResponse>({
+    queryKey: ["grants", debouncedSearch],
     queryFn: async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/grant`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/grant?search=${debouncedSearch}`);
       return res.json();
     },
+    enabled: debouncedSearch !== undefined,
   });
 
   console.log(data)
 
-  if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
     <div className="py-10 md:py-16 lg:py-20">
+      <div className="bg-[linear-gradient(91deg,#CCE5FF_3.19%,#D7E8FB_96.81%)] mb-10 md:mb-16 lg:mb-20">
+        <div className="container mx-auto py-6">
+
+        <p className="text-xl md:text-[22px] lg:text-2xl font-semibold text-[#0C2661] leading-[150%]">Search 1,285 business grants worth $50B</p>
+        <div className="w-2/5 pt-4 md:pt-5 lg:pt-6">
+          <input value={search} onChange={(e) => setSearch(e.target.value)} type="search" className="w-full h-[60px] p-4 outline-none rounded-[4px] border border-[#0C2661] bg-[#FAFCFF] text-[#0C2661] placeholder:text-[#8E938F] text-base font-normal leading-[150%]" placeholder="Search grants by keyword, title, or description" />
+        </div>
+        </div>
+      </div>
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-[#0C2661] leading-[150%]">
           Explore Available Grants
