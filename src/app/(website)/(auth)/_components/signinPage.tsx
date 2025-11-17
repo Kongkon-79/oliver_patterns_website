@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
-
 import { useState } from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
@@ -45,7 +44,7 @@ export default function SigninPage() {
       const res = await signIn('credentials', {
         email: values.email,
         password: values.password,
-        redirect: false, // we’ll redirect manually
+        redirect: false,
       })
 
       setIsLoading(false)
@@ -61,7 +60,7 @@ export default function SigninPage() {
       }
 
       toast.success('Login successful 🎉')
-      router.push('/') // ✅ redirect to homepage
+      router.push('/')
     } catch (err: any) {
       setIsLoading(false)
       toast.error(err?.message || 'Login failed')
@@ -70,13 +69,13 @@ export default function SigninPage() {
 
   return (
     <AuthLayout>
-      <div className="space-y-6 lg:space-y-8 bg-white shadow-2xl p-5 rounded-md">
+      <div className="space-y-6 lg:space-y-8 w-4xl bg-[#EFF7FF] shadow-2xl p-5 rounded-md">
         <div className="space-y-4 text-start">
-          <h1 className="text-xl md:text-2xl lg:text-[32px] font-bold text-[#71A899]">
-            Welcome to the unburdened mind
+          <h1 className="text-xl md:text-2xl lg:text-[32px] text-center font-bold text-[#0C2661]">
+            Welcome
           </h1>
-          <p className="text-[#6C757D] text-sm md:text-base">
-            Access your account to manage your mind, mood & for your peace.
+          <p className="text-[#6C757D] text-center text-sm md:text-base">
+            Access your account to manage.
           </p>
         </div>
 
@@ -137,7 +136,7 @@ export default function SigninPage() {
               <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 accent-[#71A899]"
+                  className="w-4 h-4 accent-[#0C2661]"
                   checked
                   readOnly
                 />
@@ -145,7 +144,7 @@ export default function SigninPage() {
               </div>
               <Link
                 href="/forgot-password"
-                className="text-[#71A899] underline"
+                className="text-[#0C2661] underline"
               >
                 Forgot Password?
               </Link>
@@ -154,7 +153,7 @@ export default function SigninPage() {
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full bg-[#71A899] hover:bg-[#71A899]/90 cursor-pointer text-white"
+              className="w-full bg-[#0C2661] hover:bg-[#0C2661]/90 cursor-pointer text-white"
               disabled={isLoading}
             >
               {isLoading ? 'Logging in...' : 'Log In'}
@@ -165,7 +164,7 @@ export default function SigninPage() {
               Don’t have an account?{' '}
               <Link
                 href="/signup"
-                className="text-[#71A899] font-medium hover:underline"
+                className="text-[#0C2661] font-medium hover:underline"
               >
                 Sign Up
               </Link>
