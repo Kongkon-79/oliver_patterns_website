@@ -55,7 +55,7 @@ const RelatedGrants = () => {
                 return (
                   <CarouselItem
                     key={item?._id}
-                    className="basis-1/1 md:basis-1/2 lg:basis-1/2 rounded-lg border bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6"
+                    className="basis-1/1 md:basis-1/2 lg:basis-1/2 rounded-lg border border-gray-100 bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6"
                   >
                     <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-[#0C2661] leading-[120%]">
                       {item?.title}
