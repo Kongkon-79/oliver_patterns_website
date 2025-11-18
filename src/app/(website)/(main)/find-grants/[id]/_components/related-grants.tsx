@@ -25,7 +25,7 @@ const RelatedGrants = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
-    <div className="py-10 md:py-16 lg:py-20">
+    <div className="py-10 md:py-16 lg:py-20 px-4 md:px-0">
       <div className="container mx-auto">
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0C2661] leading-[150%]">
           See Related Grants

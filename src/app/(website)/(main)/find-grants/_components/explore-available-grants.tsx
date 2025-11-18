@@ -52,9 +52,9 @@ const ExploreAvailableGrants = () => {
   // if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
-    <div className="py-10 md:py-16 lg:py-20">
+    <div className="py-10 md:py-16 lg:py-20 ">
       <div className="bg-[linear-gradient(91deg,#CCE5FF_3.19%,#D7E8FB_96.81%)] mb-10 md:mb-16 lg:mb-20">
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto py-6 px-4 md:px-0">
 
         <p className="text-xl md:text-[22px] lg:text-2xl font-semibold text-[#0C2661] leading-[150%]">Search 1,285 business grants worth $50B</p>
         <div className="w-2/5 pt-4 md:pt-5 lg:pt-6">
@@ -62,7 +62,7 @@ const ExploreAvailableGrants = () => {
         </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 md:px-0">
         <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-[#0C2661] leading-[150%]">
           Explore Available Grants
         </h2>

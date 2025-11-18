@@ -3,6 +3,7 @@ import React from "react";
 import ExploreAvailableGrants from "./_components/explore-available-grants";
 import { Faq } from "@/components/web/Faq";
 import { Testimonials } from "@/components/web/testimonials";
+import ContactToFind from "./_components/contact-to-find";
 
 const FindGrantsPage = () => {
   return (
@@ -18,6 +19,7 @@ const FindGrantsPage = () => {
         }
       />
       <ExploreAvailableGrants />
+      <ContactToFind/>
       <Faq />
       <Testimonials />
     </div>
