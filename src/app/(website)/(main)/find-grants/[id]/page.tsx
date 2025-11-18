@@ -3,13 +3,14 @@ import FindGrantsDetailsContainer from "./_components/find-grants-details-contai
 import { Faq } from "@/components/web/Faq";
 import { Testimonials } from "@/components/web/testimonials";
 import RelatedGrants from "./_components/related-grants";
+import ContactDetails from "./_components/contact-details";
 
 const FindGrantsDetailsPage = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       <FindGrantsDetailsContainer id={params?.id || ""} />
+      <ContactDetails/>
       <RelatedGrants/>
-
       <Faq />
       <Testimonials />
     </div>

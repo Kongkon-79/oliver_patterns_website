@@ -73,9 +73,9 @@ const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
-    <div className="py-10 md:py-16 lg:py-20">
+    <div className="py-10 md:py-16 lg:py-20 px-4 md:px-0">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-8 md:gap-11 lg:gap-[54px]">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 lg:gap-8 md:gap-11 lg:gap-[54px]">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0C2661] leading-[150%]">
             {grant?.title}
           </h3>
