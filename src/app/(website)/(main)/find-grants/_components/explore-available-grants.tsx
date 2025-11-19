@@ -7,6 +7,7 @@ import { useDebounce } from "@/components/hooks/useDebounce";
 import ErrorContainer from "@/components/common/ErrorContainer/ErrorContainer";
 import NotFound from "@/components/common/NotFound/NotFound";
 import GrantLoadingSkeleton from "./grant-card-skeleton";
+import OliverDropDown from "@/components/ui/Oliver-Dropdown";
 export interface GrantResponse {
   status: boolean;
   message: string;
@@ -37,9 +38,35 @@ export interface GrantItem {
   __v: number;
 }
 
+// industries data
+const INDUSTRY_ENUM = [
+  "General - Non-Industry Specific",
+  "Aeronautics",
+  "Agriculture",
+  "Automotive and Marine",
+  "Building, Construction and Engineering",
+  "Defence",
+  "Education",
+  "Energy and Renewables",
+  "Finance and Business Services",
+  "Food and Beverage",
+  "Healthcare, Medical, Biotechnology and Nanotechnology",
+  "Information Technology and Communication (ICT)",
+  "Media and Entertainment",
+  "Mining",
+  "Textile, Clothing and Footwear",
+  "Tourism",
+  "Other - Not Listed",
+];
+
+const industryOptions = INDUSTRY_ENUM.map((item) => ({
+  label: item,
+  value: item,
+}));
 
 const ExploreAvailableGrants = () => {
   const [search, setSearch] = React.useState<string>("");
+  const [industry, setIndustry] = React.useState<string>("");
   const debouncedSearch = useDebounce(search, 500);
   let content;
   console.log(search);
@@ -137,7 +164,8 @@ const ExploreAvailableGrants = () => {
           <p className="text-xl md:text-[22px] lg:text-2xl font-semibold text-[#0C2661] leading-[150%]">
             Search 1,285 business grants worth $50B
           </p>
-          <div className="w-2/5 pt-4 md:pt-5 lg:pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 border-2 border-red-500"> 
+            <div className="pt-4 md:pt-5 lg:pt-6">
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -145,6 +173,15 @@ const ExploreAvailableGrants = () => {
               className="w-full h-[60px] p-4 outline-none rounded-[4px] border border-[#0C2661] bg-[#FAFCFF] text-[#0C2661] placeholder:text-[#8E938F] text-base font-normal leading-[150%]"
               placeholder="Search grants by keyword, title, or description"
             />
+          </div>
+          <div className="pt-4 md:pt-5 lg:pt-6"> 
+            <OliverDropDown
+              options={industryOptions}
+              placeholder="Select Business Industry"
+              value={industry}
+              onChange={setIndustry}
+            />
+          </div>
           </div>
         </div>
       </div>
