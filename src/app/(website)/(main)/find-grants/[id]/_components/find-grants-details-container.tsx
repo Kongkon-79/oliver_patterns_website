@@ -6,30 +6,31 @@ import React, { useState } from "react";
 import WishlistModal from "./wishlist-modal";
 import GrantCard from "./grants-cart";
 
-export interface Grant {
-  fileUrls: string[];
+export interface SingleGrantResponse {
+  status: boolean;
+  message: string;
+  data: GrantItem;
+}
+
+export interface GrantItem {
   _id: string;
   title: string;
   type: string;
   funding: string;
-  deadline: string;
-  location: string;
-  activity: string;
-  industry: string;
+  deadline: string; // ISO date string
+  location: string[];
+  activity: string[];
+  industry: string[];
   description: string;
   imageUrl: string;
-  fileUrl?: string; // optional because sometimes it's missing
-  status: "open" | "closed" | "upcoming";
-  createdAt: string;
-  updatedAt: string;
+  fileUrl?: string; // optional single file
+  fileUrls?: string[]; // optional array of files
+  status: "upcoming" | "open" | "closed";
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
   __v: number;
 }
 
-export interface SingleGrantResponse {
-  status: boolean;
-  message: string;
-  data: Grant;
-}
 
 const grantData = {
     category: "Business",
@@ -115,10 +116,17 @@ const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
               <h4 className="text-2xl md:text-3xl lg:text-4xl text-[#424242] leading-[150%] font-semibold">
                 Industries
               </h4>
-              <button className="text-[#424242] text-xs font-medium leading-[16px] rounded-full bg-[#96C7FF] p-2">
+              <div className="flex items-center gap-3">
+                {
+                  grant?.industry?.map((item)=>{
+                    return <button key={item} className="text-[#424242] text-xs font-medium leading-[16px] rounded-full bg-[#96C7FF] p-2">
                 {" "}
-                {grant?.industry}
+                {item}
               </button>
+                  })
+                }
+              </div>
+              
             </div>
             <div className="py-6 md:py-8 lg:py-10">
               <h4 className="text-2xl md:text-3xl lg:text-4xl text-[#424242] leading-[150%] font-semibold">

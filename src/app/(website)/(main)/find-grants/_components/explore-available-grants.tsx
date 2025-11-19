@@ -24,18 +24,19 @@ export interface GrantItem {
   type: string;
   funding: string;
   deadline: string; // ISO date string
-  location: string;
-  activity: string;
-  industry: string;
+  location: string[];
+  activity: string[];
+  industry: string[];
   description: string;
   imageUrl: string;
-  fileUrls?: string[]; // sometimes array exists
-  fileUrl?: string; // sometimes single file URL exists
-  status: "open" | "closed" | "upcoming";
-  createdAt: string;
-  updatedAt: string;
+  fileUrls?: string[]; // optional because some items have fileUrl or empty array
+  fileUrl?: string; // some entries use `fileUrl` instead of `fileUrls`
+  status: "upcoming" | "open" | "closed"; // you can expand as needed
+  createdAt: string; // ISO date string
+  updatedAt: string; // ISO date string
   __v: number;
 }
+
 
 const ExploreAvailableGrants = () => {
   const [search, setSearch] = React.useState<string>("");
