@@ -10,7 +10,7 @@ const ContactToFind = () => {
         <p className="text-base font-normal text-[#424242] leading-[150%] pt-1 text-center">
           Join thousands of that have already discovered and secured funding through our platform.
         </p>
-        <div className='flex items-center justify-center py-4 md:py-6 lg:py-8'>
+        <div className='flex items-center justify-center py-4 md:py-6 lg:py-7'>
             <button className='bg-gradient-to-b from-[#355AC7] to-[#1271F2] cursor-pointer h-[41px] text-base font-semibold leading-[150%] text-white py-2 px-10 rounded-[10px]'>
                 Contact
             </button>
