@@ -31,31 +31,6 @@ export interface GrantItem {
 }
 
 
-const grantData = {
-    category: "Business",
-    location: "Australia",
-    region: "Any",
-    maxFunding: "$3M",
-    minFunding: "$100,000",
-    totalFundingPool: "$848M",
-    competitive: "Yes",
-    coContribution: "Any",
-    activities: "Small Business Digital Adoption Grant",
-    industries: "General",
-    fundingType: "Grant",
-    country: "Australia",
-    governmentTier: "Federal",
-    department: "Any",
-    contact: {
-      administration: "Small Business Digital Adoption Grant",
-      phone: "857496123",
-      generalWebsite: "#",
-      programWebsite: "#",
-      applyNow: "#",
-    },
-  };
-
-
 const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
     const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const { data, isLoading, isError, error } = useQuery<SingleGrantResponse>({
@@ -174,7 +149,8 @@ const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
                 {item}
               </div>
             })}</span></p>
-            <p className="grid grid-cols-1 md:grid-cols-2"> <span className="text-sm md:text-base font-semibold text-[#686869] leading-[150%]">funding Type</span> <span>{grant?.type}</span></p>
+            <p className="grid grid-cols-1 md:grid-cols-2"> <span className="text-sm md:text-base font-semibold text-[#686869] leading-[150%]">Competitive</span> <span>Yes</span></p>
+            <p className="grid grid-cols-1 md:grid-cols-2 py-3 md:py-4"> <span className="text-sm md:text-base font-semibold text-[#686869] leading-[150%]">funding Type</span> <span>{grant?.type}</span></p>
            </div>
           </div>
         </div>
