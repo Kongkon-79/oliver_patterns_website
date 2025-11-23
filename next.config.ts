@@ -3,12 +3,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: 'http',
+        hostname: 'res.cloudinary.com',
+      },
+      {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
-        pathname: '**',
       },
     ],
-    domains: ['res.cloudinary.com'], // ✅ এখানে থাকবে, nested না
   },
 }
 
