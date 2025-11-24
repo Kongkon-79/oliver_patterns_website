@@ -6,34 +6,38 @@ export function HowItWorks() {
     {
       icon: Search,
       title: 'Search',
-      description: 'Find grants that match your business using our powerful search and filtering tools.',
+      description:
+        'Find grants that match your business using our powerful search and filtering tools.',
     },
     {
       icon: Bookmark,
       title: 'Save',
-      description: 'Bookmark grants you are interested in and organize them in your personal dashboard.',
+      description:
+        'Bookmark grants you are interested in and organize them in your personal dashboard.',
     },
     {
       icon: FileText,
       title: 'Apply',
-      description: 'Track your application progress and get reminders for important deadlines.',
+      description:
+        'Track your application progress and get reminders for important deadlines.',
     },
   ]
 
   return (
-    <div className="w-full bg-white py-16 sm:py-20 lg:py-[180px]  px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white mb-16 sm:mb-20 lg:mb-[160px]  px-4 sm:px-6 lg:px-8">
       <div className=" container mx-auto">
         <div className="text-center mb-[60px]">
           <h1 className="text-3xl sm:text-3xl lg:text-4xl font-bold text-[#0C2661] mb-4">
             How Our Grants Search Works
           </h1>
           <p className="text-base text-[#424242] ">
-            A simple three-step process to search, save, and apply for grants that help your business prosper.
+            A simple three-step process to search, save, and apply for grants
+            that help your business prosper.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, ) => {
+          {steps.map((step) => {
             const Icon = step.icon
             return (
               <Card
@@ -48,12 +52,14 @@ export function HowItWorks() {
                 </CardHeader>
 
                 <CardContent className="text-center">
-                  <h3 className="text-[18px] font-bold text-[#0C2661] mb-3">{step.title}</h3>
-                  <p className="text-sm text-[#424242] font-normal">{step.description}</p>
+                  <h3 className="text-[18px] font-bold text-[#0C2661] mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-[#424242] font-normal">
+                    {step.description}
+                  </p>
                 </CardContent>
               </Card>
-
-
             )
           })}
         </div>

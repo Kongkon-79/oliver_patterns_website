@@ -33,17 +33,18 @@ interface FooterProps {
 
 // ================== COMPONENT ==================
 export function Footer({
-  
   quickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Blog', href: '/blogs' },
-    { label: 'Podcasts', href: '/podcast' },
+    // { label: 'Home', href: '/' },
+    // { label: 'About', href: '/about' },
+    { label: 'Find Grants', href: '/find-grants' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms & Conditions', href: '/terms&conditions' },
     // { label: 'Blog', href: '/blogs' },
   ],
   contactInfo = {
-    email: 'support@unburdenedmind.com',
+    email: 'help@grantsDOTcomDOTau',
     phone: '+1 (555) 123-4567',
     address: '123 Care Street, City, State, ZIP',
   },
@@ -100,24 +101,26 @@ export function Footer({
 
   return (
     <footer
-      className="w-full py-8 px-4 sm:px-6 lg:px-8"
-      style={{ background: 'linear-gradient(99.62deg, #DEEEFF 8.8%, #BEDCFF 100%)' }}
+      className="w-full py-10 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: 'linear-gradient(99.62deg, #DEEEFF 8.8%, #BEDCFF 100%)',
+      }}
     >
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {/* Logo Section */}
           <div>
-          <Image
-            src="/assets/logo.png"
-            alt="Logo"
-            width={1000}
-            height={1000}
-            className="w-[131px] h-[84px] mb-4"
-          />
-          <p className='text-sm text-[#424242] font-normal pl-5'>
-            Helping Australian businesses discover government funding to accelerate growth and prosperity.
-
-          </p>
+            <Image
+              src="/assets/logo.png"
+              alt="Logo"
+              width={1000}
+              height={1000}
+              className="w-[131px] h-[84px] mb-4"
+            />
+            <p className="text-sm text-[#424242] font-normal pl-5">
+              Helping Australian businesses discover government funding to
+              accelerate growth and prosperity.
+            </p>
           </div>
 
           {/* Quick Links */}

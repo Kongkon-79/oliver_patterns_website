@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function Hero() {
   return (
     <div className="w-full h-[700px] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-
       {/* 🔹 Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -24,20 +24,25 @@ export function Hero() {
         </h1>
 
         <p className="text-base font-normal sm:text-base text-[#F4F4F4] mb-8">
-          Find grants, claim your funding, and manage opportunities - all in one place. Never miss your chance to prosper!
+          Find grants, claim your funding, and manage opportunities - all in one
+          place. Never miss your chance to prosper!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="h-[50px] px-4 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
-            Find Grants
-          </Button>
+          <Link href="/find-grants">
+            <Button className="h-[50px] px-6 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
+              Find Grants
+            </Button>
+          </Link>
 
-          <Button
-            variant="outline"
-            className="h-12 px-4 md:px-[26px] bg-[#E7F1FE] text-[#0C2661] hover:bg-[#E7F1FE] font-semibold rounded-lg cursor-pointer hover:scale-105 duration-200"
-          >
-            Get Started Free
-          </Button>
+          <Link href={'/signup'}>
+            <Button
+              variant="outline"
+              className="h-12 px-4 md:px-[26px] bg-[#E7F1FE] text-[#0C2661] hover:bg-[#E7F1FE] font-semibold rounded-lg cursor-pointer hover:scale-105 duration-200"
+            >
+              Get Started Free
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

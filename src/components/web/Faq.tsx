@@ -32,35 +32,34 @@ export function Faq() {
   ]
 
   return (
-    <div className="w-full bg-white py-16 sm:py-20 lg:py-[147px] px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white my-16 sm:my-20 lg:my-[147px] px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-[#0C2661] mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-[#424242] text-base">Find answers to common questions about our facilities</p>
+          <p className="text-[#424242] text-base">
+            Find answers to common questions about our facilities
+          </p>
         </div>
 
-   <Accordion type="single" collapsible className="w-full">
-  {faqs.map((faq, index) => (
-    <AccordionItem
-      key={index}
-      value={`item-${index}`}
-      className="mb-3 border-0 overflow-hidden rounded-lg"
-    >
-      <AccordionTrigger className="bg-[#DEEEFF] cursor-pointer duration-300  hover:bg-blue-200 px-6 py-7 text-left font-semibold text-[#0C2661] text-xl transition-colors">
-        {faq.question}
-      </AccordionTrigger>
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="mb-3 border-0 overflow-hidden rounded-lg"
+            >
+              <AccordionTrigger className="bg-[#DEEEFF] cursor-pointer duration-300  hover:bg-blue-200 px-6 py-7 text-left font-semibold text-[#0C2661] text-xl transition-colors">
+                {faq.question}
+              </AccordionTrigger>
 
-      <AccordionContent
-        className="bg-[#DEEEFF] px-6 py-4 text-[#0C2661] text-base transition-all duration-300"
-      >
-        {faq.answer}
-      </AccordionContent>
-    </AccordionItem>
-  ))}
-</Accordion>
-
+              <AccordionContent className="bg-[#DEEEFF] px-6 py-4 text-[#0C2661] text-base transition-all duration-300">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   )

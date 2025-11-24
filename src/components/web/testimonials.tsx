@@ -22,7 +22,7 @@ export function Testimonials() {
     {
       name: 'Sarah Johnson',
       location: 'Sydney, NSW',
-       image: '/assets/Avatar.jpg',
+      image: '/assets/Avatar.jpg',
       rating: 5,
       text: "I've been ordering from TABLEFRESH for over a year now, and the quality of their organic produce is consistently excellent. The convenience of having fresh, organic food delivered to my door has made healthy eating so much easier for my family.",
     },
@@ -57,7 +57,7 @@ export function Testimonials() {
     {
       name: 'James Wilson',
       location: 'Canberra, ACT',
-       image: '/assets/Avatar.jpg',
+      image: '/assets/Avatar.jpg',
       rating: 5,
       text: 'Incredible quality and variety. I’ve tried many services, but nothing comes close to TABLEFRESH. Worth every penny!',
     },
@@ -79,7 +79,7 @@ export function Testimonials() {
   }, [api])
 
   return (
-    <div className="w-full bg-white py-16 sm:py-20 lg:py-[147px] px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-white my-16 sm:my-20 lg:my-[147px] px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -87,7 +87,8 @@ export function Testimonials() {
             Trusted by Australian Businesses
           </h1>
           <p className="text-[#424242] text-base max-w-2xl mx-auto">
-            Hear from business owners who have successfully secured funding using our platform.
+            Hear from business owners who have successfully secured funding
+            using our platform.
           </p>
         </div>
 
@@ -122,7 +123,9 @@ export function Testimonials() {
                           <h4 className="font-semibold text-[20px] text-[#0C2661] leading-tight">
                             {testimonial.name}
                           </h4>
-                          <p className="text-xs text-[#424242]">{testimonial.location}</p>
+                          <p className="text-xs text-[#424242]">
+                            {testimonial.location}
+                          </p>
                         </div>
                       </div>
 

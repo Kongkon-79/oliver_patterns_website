@@ -1,9 +1,9 @@
-import { Hero } from "@/components/common/Hero";
-import React from "react";
-import ExploreAvailableGrants from "./_components/explore-available-grants";
-import { Faq } from "@/components/web/Faq";
-import { Testimonials } from "@/components/web/testimonials";
-import ContactToFind from "./_components/contact-to-find";
+import { Hero } from '@/components/common/Hero'
+import React from 'react'
+import ExploreAvailableGrants from './_components/explore-available-grants'
+import { Faq } from '@/components/web/Faq'
+import { Testimonials } from '@/components/web/testimonials'
+import ContactToFind from './_components/contact-to-find'
 
 const FindGrantsPage = () => {
   return (
@@ -17,13 +17,14 @@ const FindGrantsPage = () => {
             over 1,200 available grants for your business
           </>
         }
+        videoSrc="/assets/hero.mp4"
       />
       <ExploreAvailableGrants />
-      <ContactToFind/>
+      <ContactToFind />
       <Faq />
       <Testimonials />
     </div>
-  );
-};
+  )
+}
 
-export default FindGrantsPage;
+export default FindGrantsPage
