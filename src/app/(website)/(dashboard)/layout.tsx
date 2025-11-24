@@ -1,12 +1,25 @@
 'use client'
 import type { ReactNode } from 'react'
-
-// import { redirect } from 'next/navigation'
-// import { useSession } from 'next-auth/react'
 import AdminSidebar from '@/components/sideBar'
 import UserHeader from '@/components/useHeader'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const { status } = useSession()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/login')
+    }
+  }, [status, router])
+
+  if (status === 'loading') {
+    return <div className="p-8">Loading...</div>
+  }
+
   return (
     <div className="bg-[#F8F9FC] min-h-screen flex">
       {/* Sidebar - Fixed */}
@@ -21,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <UserHeader />
         </div>
 
-        {/* Page Content (scrollable) */}
+        {/* Page Content */}
         <div className="flex-1 overflow-y-auto pt-[110px] px-4">{children}</div>
       </div>
     </div>

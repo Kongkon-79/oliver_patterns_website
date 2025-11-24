@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Search, FileText, Bookmark, BarChart3 } from 'lucide-react'
+import Link from 'next/link'
 
 export function Services() {
   const services = [
@@ -57,15 +58,19 @@ export function Services() {
               opportunities, claim funding, and prosper.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="h-12 px-[45px] !bg-gradient  hover:bg-gradient text-[#EFF4FD]  cursor-pointer hover:scale-105 duration-200 font-semibold rounded-lg">
-                Find Grants
-              </Button>
-              <Button
-                variant="outline"
-                className="h-12 px-8 border-2 bg-[#E7F1FE] border-[#0C2661] text-[#0C2661] text-base hover:bg-[#E7F1FE]/90 cursor-pointer hover:scale-105 duration-200 font-semibold rounded-lg"
-              >
-                Get Started Free
-              </Button>
+              <Link href="/find-grants">
+                <Button className="h-12 px-[45px] !bg-gradient  hover:bg-gradient text-[#EFF4FD]  cursor-pointer hover:scale-105 duration-200 font-semibold rounded-lg">
+                  Find Grants
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button
+                  variant="outline"
+                  className="h-12 px-8 border-2 bg-[#E7F1FE] border-[#0C2661] text-[#0C2661] text-base hover:bg-[#E7F1FE]/90 cursor-pointer hover:scale-105 duration-200 font-semibold rounded-lg"
+                >
+                  Get Started Free
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -76,7 +81,7 @@ export function Services() {
               return (
                 <Card
                   key={service.title}
-                  className="bg-[linear-gradient(90.93deg,#CCE5FF_3.19%,#D7E8FB_96.81%)] border-0 rounded-2xl hover:scale-95 duration-300 hover:shadow-2xl py-[60px] px-6"
+                  className="bg-[linear-gradient(90.93deg,#CCE5FF_3.19%,#D7E8FB_96.81%)] border-0 rounded-2xl hover:scale-95 duration-300 hover:shadow-2xl py-[40px] px-6"
                   style={{ boxShadow: '0px 1px 2px 0px #0000000D' }}
                 >
                   <CardHeader className="">

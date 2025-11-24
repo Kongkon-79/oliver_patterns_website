@@ -15,7 +15,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const profileImage =
-    session?.user?.image?.replace('http://', 'https://') || '/assets/Avatar.jpg'
+    session?.user?.image?.replace('http://', 'https://') || '/demoUser.png'
 
   console.log('Session Data:', session)
 

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function HeroCta() {
   return (
-    <div className="w-full bg-[#E4F1FF] py-16 sm:py-20 lg:py-[147px] px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-[#E4F1FF] py-16 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl sm:text-4xl lg:text-4xl font-bold text-[#0C2661] mb-4">
           Ready to find grants for your business?

@@ -30,7 +30,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/find-grants">
-            <Button className="h-[50px] px-4 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
+            <Button className="h-[50px] px-6 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
               Find Grants
             </Button>
           </Link>
