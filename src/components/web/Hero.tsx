@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function Hero() {
   return (
@@ -28,16 +29,20 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="h-[50px] px-4 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
-            Find Grants
-          </Button>
+          <Link href="/find-grants">
+            <Button className="h-[50px] px-4 md:px-[45px] !bg-gradient text-white text-base font-bold rounded-lg cursor-pointer hover:scale-105 duration-200">
+              Find Grants
+            </Button>
+          </Link>
 
-          <Button
-            variant="outline"
-            className="h-12 px-4 md:px-[26px] bg-[#E7F1FE] text-[#0C2661] hover:bg-[#E7F1FE] font-semibold rounded-lg cursor-pointer hover:scale-105 duration-200"
-          >
-            Get Started Free
-          </Button>
+          <Link href={'/signup'}>
+            <Button
+              variant="outline"
+              className="h-12 px-4 md:px-[26px] bg-[#E7F1FE] text-[#0C2661] hover:bg-[#E7F1FE] font-semibold rounded-lg cursor-pointer hover:scale-105 duration-200"
+            >
+              Get Started Free
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

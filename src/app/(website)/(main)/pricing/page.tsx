@@ -1,8 +1,8 @@
-import React from "react";
-import PricingContainer from "./_components/pricing-container";
-import { Hero } from "@/components/common/Hero";
-import { Faq } from "@/components/web/Faq";
-import { Testimonials } from "@/components/web/testimonials";
+import React from 'react'
+import PricingContainer from './_components/pricing-container'
+import { Hero } from '@/components/common/Hero'
+import { Faq } from '@/components/web/Faq'
+import { Testimonials } from '@/components/web/testimonials'
 
 const PricingPage = () => {
   return (
@@ -14,13 +14,14 @@ const PricingPage = () => {
             Select your plan and access the grants you need to grow and prosper.
           </>
         }
+        videoSrc="/assets/hero.mp4"
       />
       <PricingContainer />
 
       <Faq />
       <Testimonials />
     </div>
-  );
-};
+  )
+}
 
-export default PricingPage;
+export default PricingPage

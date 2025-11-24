@@ -35,7 +35,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white py-3 sticky top-0 w-full z-50 shadow-sm">
+    <nav className="bg-white py-2 sticky top-0 w-full z-50 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -77,12 +77,12 @@ export default function Navbar() {
 
           {/* Right Desktop Buttons / Profile */}
           <div className="hidden md:flex items-center gap-4">
-            {!session ? (
+            {!session?.user ? (
               <>
                 <Link href="/signin">
                   <Button
                     variant="bg_border"
-                    className="border border-[#5A8DEE] h-[48px] !bg-white text-[#0C2661] px-[55px] hover:scale-105 transition"
+                    className="border border-[#0C2661] h-[48px] !bg-white text-[#0C2661] px-[55px] hover:scale-105 transition"
                   >
                     Log in
                   </Button>
@@ -130,12 +130,12 @@ export default function Navbar() {
           ))}
 
           {/* Mobile Buttons OR Profile */}
-          {!session ? (
+          {!session?.user ? (
             <div className="pt-2 flex flex-col space-y-3">
               <Link href="/signin">
                 <Button
                   variant="bg_border"
-                  className="w-full border border-[#5A8DEE] py-3 px-4 !bg-white text-[#0C2661]"
+                  className="w-full border border-[#0C2661] py-3 px-4 !bg-white text-[#0C2661]"
                 >
                   Log in
                 </Button>

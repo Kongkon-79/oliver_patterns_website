@@ -13,7 +13,7 @@ import { Search } from 'lucide-react'
 
 export function SearchSection() {
   return (
-    <div className="w-full bg-blue-100 py-[46px] px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-blue-100 py-[46px] mb-16 md:mb-24 px-4 sm:px-6 lg:px-8">
       <div className=" container mx-auto">
         <h1 className="text-2xl sm:text-2xl font-bold text-[#0C2661] mb-8">
           Search over 1,285 business grants worth $50B

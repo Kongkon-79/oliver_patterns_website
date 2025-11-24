@@ -57,8 +57,8 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className="flex-1 pl-5 pb-5 pr-5 space-y-1.5">
-          <h1 className="text-xl text-[#0C2661] font-bold">
+        <div className="flex-1 pl-5 pb-5 pr-5 space-y-1">
+          <h1 className="text-xl lg:text-2xl text-[#0C2661] font-bold">
             Send us a Message
           </h1>
           <p className="opacity-75">
