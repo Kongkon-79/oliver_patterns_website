@@ -2,6 +2,8 @@
 
 import { usePathname } from 'next/navigation'
 
+import Link from 'next/link'
+
 export default function UserHeader() {
   const pathname = usePathname()
 
@@ -62,9 +64,17 @@ export default function UserHeader() {
   const [title, description] = getPageContent()
 
   return (
-    <header className="bg-sky-100/60 border-b border-gray-200 px-8 py-[13px] flex flex-col space-y-2 justify-center">
-      <h1 className="text-[22px] font-semibold text-[#0C2661]">{title}</h1>
-      <p className="text-sm text-gray-600">{description}</p>
+    <header className="bg-sky-100/60 border-b border-gray-200 px-8 py-[13px] flex justify-between space-y-2 items-center ">
+      <div>
+        <h1 className="text-[22px] font-semibold text-[#0C2661]">{title}</h1>
+        <p className="text-sm text-gray-600">{description}</p>
+      </div>
+      <Link
+        href="/"
+        className="inline-block px-5 py-2 border border-[#1375b6] text-[#05449c] font-semibold rounded-md shadow-md hover:shadow-2xs transition-colors duration-300 focus:outline-none focus:ring-2"
+      >
+        Back to Website
+      </Link>
     </header>
   )
 }

@@ -1,10 +1,14 @@
 import React from 'react'
-import FindGrantsDetailsContainer from './_components/find-grants-details-container'
+
 import { Faq } from '@/components/web/Faq'
 import { Testimonials } from '@/components/web/testimonials'
-import RelatedGrants from './_components/related-grants'
+
 import ContactDetails from './_components/contact-details'
 import { Hero } from '@/components/common/Hero'
+import {
+  FindGrantsDetailsContainer,
+  RelatedGrants,
+} from './_components/findGrantsDetailsContainer'
 
 const FindGrantsDetailsPage = ({ params }: { params: { id: string } }) => {
   return (
@@ -20,9 +24,9 @@ const FindGrantsDetailsPage = ({ params }: { params: { id: string } }) => {
         }
         videoSrc="/assets/hero.mp4"
       />
-      <FindGrantsDetailsContainer id={params?.id || ''} />
+      <FindGrantsDetailsContainer id={params.id} />
       <ContactDetails />
-      <RelatedGrants />
+      <RelatedGrants id={params.id} /> {/* Pass same ID */}
       <Faq />
       <Testimonials />
     </div>

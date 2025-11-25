@@ -1,14 +1,14 @@
-import { TextAnimate } from "@/components/ui/text-animate";
-import Image from "next/image";
-import React from "react";
+import { TextAnimate } from '@/components/ui/text-animate'
+import Image from 'next/image'
+import React from 'react'
 
 interface Props {
-  message: string;
+  message: string
 }
 
 const NotFound = ({ message }: Props) => {
   return (
-    <div className="">
+    <div>
       <div className="bg-gray-300 h-[360px] w-full flex flex-col items-center justify-center rounded-[20px]">
         {/* Image */}
         <Image
@@ -19,15 +19,15 @@ const NotFound = ({ message }: Props) => {
           className="mb-4 w-[250px] h-[250px]"
         />
 
-        {/* Text Animation applied to message string only */}
-        <p className="text-lg font-bold text-gradient text-center w-1/3">
+        {/* FIX: div instead of p to avoid <p> inside <p> */}
+        <div className="text-lg font-bold text-gradient text-center w-1/3">
           <TextAnimate animation="slideUp" by="word">
             {message}
           </TextAnimate>
-        </p>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NotFound;
+export default NotFound
