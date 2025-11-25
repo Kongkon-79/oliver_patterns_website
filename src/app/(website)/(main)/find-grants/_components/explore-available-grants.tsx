@@ -237,7 +237,7 @@ const ExploreAvailableGrants = () => {
             return (
               <div
                 key={item?._id}
-                className="rounded-lg bg-white border border-gray-100 shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6"
+                className="rounded-lg bg-white border border-gray-100 shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-[#0C2661] leading-[120%]">
                   {item?.title}
@@ -263,7 +263,7 @@ const ExploreAvailableGrants = () => {
                     {item?.location?.join(', ')}
                   </p>
                   <Link href={`/find-grants/${item?._id}`}>
-                    <button className="text-xs font-semibold text-[#E8F3FF] cursor-pointer leading-[150%] rounded-md border border-[#E8F3FF] bg-gradient-to-b from-[#355AC7] to-[#1271F2] py-2 px-3 hover:shadow-lg transition-shadow">
+                    <button className="text-xs font-semibold text-[#E8F3FF] cursor-pointer leading-[150%] rounded-md border border-[#E8F3FF] bg-gradient-to-b from-[#355AC7] to-[#1271F2] py-2 px-3 hover:shadow-lg hover:scale-[1.02] transition-all .5s">
                       View Details
                     </button>
                   </Link>
