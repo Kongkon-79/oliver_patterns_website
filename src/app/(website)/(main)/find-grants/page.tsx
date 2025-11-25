@@ -19,7 +19,10 @@ const FindGrantsPage = () => {
         }
         videoSrc="/assets/hero.mp4"
       />
-      <ExploreAvailableGrants />
+      <div id="explore-grants-section">
+        <ExploreAvailableGrants />
+      </div>
+
       <ContactToFind />
       <Faq />
       <Testimonials />

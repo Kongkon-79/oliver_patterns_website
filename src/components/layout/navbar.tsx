@@ -14,8 +14,7 @@ export default function Navbar() {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const profileImage =
-    session?.user?.image?.replace('http://', 'https://') || '/demoUser.png'
+  const profileImage = session?.user?.image || '/demoUser.png'
 
   console.log('Session Data:', session)
 
