@@ -10,6 +10,7 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import Image from 'next/image'
+import WishlistModal from './wishlist-modal'
 
 // Types
 interface GrantData {
@@ -50,6 +51,8 @@ interface GrantDetailsResponse {
 
 // Find Grants Details Container Component
 export const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
+  const [isWishlistOpen, setIsWishlistOpen] = React.useState(false)
+
   const { data, isLoading, isError, error } = useQuery<GrantDetailsResponse>({
     queryKey: ['grant-details', id],
     queryFn: async () => {
@@ -181,12 +184,36 @@ export const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
           <div className="lg:col-span-1">
             <div className="sticky top-8 space-y-6">
               {/* Image */}
-              <div className="rounded-lg overflow-hidden shadow-lg">
+              <div className="rounded-lg overflow-hidden shadow-lg relative">
+                {/* Add Wishlist Button */}
+                <button
+                  onClick={() => setIsWishlistOpen(true)}
+                  className="absolute top-3 right-3 flex items-center gap-1 text-sm text-[#0C2661] bg-white/80 backdrop-blur-sm 
+               px-3 py-1.5 rounded-full shadow hover:bg-white transition cursor-pointer"
+                >
+                  Add Wishlist
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#0C2661"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 3.75c-1.61 0-3.04.87-3.75 2.19A4.125 4.125 0 0 0 9 3.75C6.38 3.75 4.5 5.81 4.5 8.25c0 4.28 6 9 7.5 9s7.5-4.72 7.5-9c0-2.44-1.88-4.5-4.5-4.5z"
+                    />
+                  </svg>
+                </button>
+
+                {/* Image */}
                 <Image
                   src={grant.imageUrl}
                   alt={grant.title}
-                  width={640} // Adjust width as per your layout needs
-                  height={256} // Adjust height to maintain aspect ratio (e.g., 64 * 4 = 256)
+                  width={640}
+                  height={256}
                   className="object-cover w-full h-64"
                 />
               </div>
@@ -258,6 +285,11 @@ export const FindGrantsDetailsContainer = ({ id }: { id: string }) => {
               </div>
             </div>
           </div>
+          <WishlistModal
+            isOpen={isWishlistOpen}
+            onClose={() => setIsWishlistOpen(false)}
+            id={grant._id}
+          />
         </div>
       </div>
     </div>
@@ -314,7 +346,7 @@ export const RelatedGrants = ({ id }: { id: string }) => {
                 return (
                   <CarouselItem
                     key={item._id}
-                    className="basis-1/1 md:basis-1/2 lg:basis-1/2 rounded-lg border border-gray-100 bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6 lg:p-9"
+                    className="basis-1/1 md:basis-1/2 lg:basis-1/2 rounded-lg border border-gray-100 bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.12),0_0_0_0_rgba(0,0,0,0.06),0_0_0_0_rgba(0,0,0,0.04)] p-5 md:p-6 lg:p-8"
                   >
                     <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-[#0C2661] leading-[120%]">
                       {item.title}

@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { Button } from './ui/button'
+
 import Link from 'next/link'
 
 export default function UserHeader() {
@@ -71,7 +71,7 @@ export default function UserHeader() {
       </div>
       <Link
         href="/"
-        className="inline-block px-5 py-2 bg-[#355AC7] text-white font-semibold rounded-md shadow-md hover:bg-[#1271F2] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="inline-block px-5 py-2 border border-[#1375b6] text-[#05449c] font-semibold rounded-md shadow-md hover:shadow-2xs transition-colors duration-300 focus:outline-none focus:ring-2"
       >
         Back to Website
       </Link>

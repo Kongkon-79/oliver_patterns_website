@@ -5,6 +5,7 @@ import Providers from './providers'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import { Toaster } from 'sonner'
+import TopLoader from 'nextjs-toploader'
 
 // Primary font (GLOBAL)
 const manrope = Manrope({
@@ -23,7 +24,7 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   title: 'Grants Guru | Find Grants Business',
   description:
-    'The UnBurdened Mind helps leaders navigate the space between personal insight and professional influence.',
+    'Find grants, claim your funding, and manage opportunities - all in one place. Never miss your chance to prosper!',
 }
 
 export default async function RootLayout({
@@ -39,6 +40,13 @@ export default async function RootLayout({
         suppressHydrationWarning
         className={`${manrope.className} ${urbanist.variable} font-manrope antialiased min-h-screen bg-white text-black`}
       >
+        <TopLoader
+          color="#D7E8FB"
+          shadow="0 0 10px #147575, 0 0 5px #147575"
+          showSpinner={false}
+          height={4}
+          easing="ease-in"
+        />
         <Toaster position="top-right" />
         <Providers session={session}>{children}</Providers>
       </body>
